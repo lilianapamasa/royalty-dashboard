@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royalty Payment Anomaly Analysis — 2024 v4</title>
+<title>Royalty Payment Anomaly Analysis — Year: 2024 v4</title>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -220,7 +220,7 @@
 </main>
 
 <footer class="footer">
-  <span>Music Publishing Operations · Data Scientist Take-Home · 2024</span>
+  <span>Music Publishing Operations · 2024 Year Analysis</span>
   <span>Chart.js · royalty_payments.csv + partner_lookup.csv</span>
 </footer>
 
@@ -482,7 +482,7 @@ function getSeverity(z) {
 }
 
 function getReason(r) {
-  if(r.amount < 0)               return 'Negative payment processed';
+  if(r.amount < 0)               return 'Negative Payment Processed';
   if(r.partner==='Brightwave Publishing' && r.market==='UK' && r.month==='2024-03') return '2× above partner average';
   if(r.partner==='Brightwave Publishing' && r.market==='US' && r.month==='2024-09') return 'Unexplained spike';
   if(r.partner==='Harborlight Music'     && r.market==='AU') return 'Rate drifting upward (5 months)';
@@ -491,9 +491,9 @@ function getReason(r) {
 }
 
 function getAction(r) {
-  if(r.amount < 0) return 'Audit & reverse';
+  if(r.amount < 0) return 'Audit & Reverse';
   if(r.partner==='Harborlight Music' && r.market==='AU') return 'Set up rate monitor';
-  return 'Audit & investigate';
+  return 'Audit & Investigate';
 }
 
 function buildTable(pf, mf) {
